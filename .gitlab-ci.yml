@@ -1,0 +1,40 @@
+stages:
+  - test
+  - build
+
+variables:
+  NODE_IMAGE: node:20.15.1
+  CHROME_BIN: "/usr/bin/chromium-browser"
+
+# Cache to save time in future runs
+cache:
+  paths:
+    - node_modules/
+
+# Test stage
+test:
+  image: $NODE_IMAGE
+  stage: test
+  script:
+    - npm install  
+    - npm run test -- --watch=false --browsers=ChromeHeadless  
+  artifacts:
+    when: always
+    reports:
+      junit: coverage/test-results.xml 
+    paths:
+      - coverage/ 
+  allow_failure: false  # If tests fail, the pipeline stops
+
+# Build stage
+build:
+  image: $NODE_IMAGE
+  stage: build
+  script:
+    - npm install 
+    - npm run build -- --prod  
+  artifacts:
+    paths:
+      - dist/ 
+  only:
+    - master

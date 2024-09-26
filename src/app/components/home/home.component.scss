@@ -1,0 +1,23 @@
+$container-gap: 20px;
+$container-height: calc(100vh - 104px);
+$big-title-font-size: 3rem;
+$big-title-font-weight: lighter;
+
+@mixin center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    @include center-flex;
+    flex-direction: column;
+    height: $container-height;
+    width: 100%;
+    gap: $container-gap;
+
+    .big-title {
+        font-size: $big-title-font-size;
+        font-weight: $big-title-font-weight;
+    }
+}

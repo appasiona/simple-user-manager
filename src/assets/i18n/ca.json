@@ -1,0 +1,52 @@
+{
+    "home-view": {
+        "welcome": "Benvingut/da",
+        "users-manager-btn": "Gestor d'usuaris"
+    },
+    "users-view": {
+        "filter": "Filtrar",
+        "add-user-btn": "Afegir usuari",
+        "col-username": "Usuari",
+        "col-exp-date": "Data de caducitat",
+        "col-enabled": "Actiu",
+        "col-actions": "Accions",
+        "users-per-page": "Usuaris per pàgina",
+        "next-page": "Pàgina següent",
+        "prev-page": "Pàgina anterior",
+        "first-page": "Primera pàgina",
+        "last-page": "Última pàgina",
+        "user-deleted-success": "Usuari eliminat correctament!",
+        "user-added-success": "Usuari afegit correctament!",
+        "user-updated-success": "Usuari actualitzat correctament!"
+    },
+    "user-modal": {
+        "new-user-title": "Nou usuari",
+        "edit-user-title": "Editar usuari",
+        "username": "Nom d'usuari",
+        "password": "Contrasenya",
+        "repeat-password": "Repetir contrasenya",
+        "exp-date": "Data de caducitat",
+        "enabled": "Habilitat",
+        "save-btn": "Desar",
+        "cancel-btn": "Cancelar",
+        "password-mismatch": "Les contrasenyes no coincideixen!"
+    },
+    "delete-user-modal": {
+        "title": "Eliminar usuari",
+        "message": "Estàs segur que vols eliminar aquest usuari?",
+        "cancel-btn": "Cancelar",
+        "confirm-btn": "Eliminar"
+    },
+    "generic": {
+        "yes": "Sí",
+        "no": "No",
+        "close": "Tancar",
+        "cancel": "Cancel·lar"
+    },
+    "error": {
+        "username-required": "Es requereix un nom d'usuari",
+        "min-length": "La longitud mínima és de {{min}} caràcters",
+        "max-length": "La longitud màxima és de {{max}} caràcters",
+        "password-required": "Es requereix una contrasenya"
+    }
+}

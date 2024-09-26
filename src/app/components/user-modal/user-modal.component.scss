@@ -1,0 +1,31 @@
+$column-gap: 20px;
+$min-form-field-width: 200px;
+$action-buttons-padding: 20px;
+$action-buttons-gap: 10px;
+
+@mixin flex-center($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.row {
+  @include flex-center(space-between, flex-start);
+  flex-wrap: wrap;
+  column-gap: $column-gap;
+}
+
+.form-field {
+  flex: 1;
+  min-width: $min-form-field-width;
+}
+
+.checkbox-right {
+  margin-left: auto;
+}
+
+.action-buttons {
+  @include flex-center(flex-end);
+  column-gap: $action-buttons-gap;
+  padding: $action-buttons-padding;
+}

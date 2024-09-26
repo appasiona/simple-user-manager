@@ -1,0 +1,15 @@
+$action-buttons-padding: 20px;
+$action-buttons-gap: 10px;
+$action-buttons-align: flex-end;
+
+@mixin flex-align($justify: center, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+.action-buttons {
+    @include flex-align($action-buttons-align);
+    column-gap: $action-buttons-gap;
+    padding: $action-buttons-padding;
+}

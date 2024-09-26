@@ -1,0 +1,65 @@
+<div *ngIf="isLoading" class="loader">
+    <mat-spinner></mat-spinner>
+</div>
+<div>
+    <div class="top-bar">
+        <mat-form-field>
+            <mat-label>🔎 {{ 'users-view.filter' | translate }}</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder=" {{ 'users-view.filter' | translate }}">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="addUser()" matTooltip="{{'user-modal.new-user-title' | translate}}">
+            <mat-icon aria-hidden="true">person_add</mat-icon>
+            <span>{{ 'users-view.add-user-btn' | translate }}</span>
+        </button>
+    </div>
+
+    <div class="mat-elevation-z6">
+        <div class="table-container">
+
+            <table mat-table [dataSource]="dataSource" matSort>
+                <!-- Username Column -->
+                <ng-container matColumnDef="username">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'users-view.col-username' | translate }}
+                    </th>
+                    <td mat-cell *matCellDef="let user"> {{user.username}} </td>
+                </ng-container>
+
+                <!-- Expiration Date Column -->
+                <ng-container matColumnDef="expirationDate">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'users-view.col-exp-date' | translate }}
+                    </th>
+                    <td mat-cell *matCellDef="let user"> {{user.expirationDate | date}} </td>
+                </ng-container>
+
+                <!-- Enabled Column -->
+                <ng-container matColumnDef="enabled">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'users-view.col-enabled' | translate }}
+                    </th>
+                    <td mat-cell *matCellDef="let user"> {{user.enabled ?  ('generic.yes' | translate)  : ('generic.no' | translate)}} </td>
+                </ng-container>
+
+                <!-- Actions Column -->
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'users-view.col-actions' | translate }}
+                    </th>
+                    <td mat-cell *matCellDef="let user">
+                        <div class="table-actions">
+                            <button class="margin-5 no-box-shadow" mat-mini-fab matTooltip="Primary" color="primary"
+                                (click)="editUser(user)" matTooltip="{{'user-modal.edit-user-title' | translate}}"><mat-icon aria-hidden="true">mode_edit</mat-icon></button>
+                            <button class="margin-5 no-box-shadow" mat-mini-fab matTooltip="Warn" color="warn"
+                                (click)="deleteUser(user.id)" matTooltip="{{'delete-user-modal.title' | translate}}"><mat-icon aria-hidden="true">delete</mat-icon></button>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <!-- Header and Row Definitions -->
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of users">
+        </mat-paginator>
+    </div>
+</div>

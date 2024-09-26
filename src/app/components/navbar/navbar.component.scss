@@ -1,0 +1,29 @@
+$paragraph-margin: 0;
+$link-color: white;
+$link-text-decoration: none;
+$link-cursor: pointer;
+
+@mixin link-styles($color, $text-decoration, $cursor) {
+    color: $color;
+    text-decoration: $text-decoration;
+    cursor: $cursor;
+}
+
+.logo-container {
+    a {
+        display: flex;
+        align-items: center;
+    }
+}
+
+p {
+    margin: $paragraph-margin;
+
+    a {
+        @include link-styles($link-color, $link-text-decoration, $link-cursor);
+    }
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

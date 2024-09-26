@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>{{ ('user-modal.' + title) | translate }}</h2>
+<mat-dialog-content>
+
+    <form [formGroup]="userForm">
+        <div class="row">
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label for="username">{{ 'user-modal.username' | translate }}</mat-label>
+                <input matInput id="username" formControlName="username">
+                <mat-error *ngIf="userForm.get('username')?.hasError('required')">{{ 'error.username-required' | translate }}</mat-error>
+                <mat-error *ngIf="userForm.get('username')?.hasError('minlength')">{{ 'error.min-length' | translate: {min: '4'} }}</mat-error>
+                <mat-error *ngIf="userForm.get('username')?.hasError('maxlength')">{{ 'error.max-length' | translate: {max: '15'} }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label for="expirationDate">{{ 'user-modal.exp-date' | translate }}</mat-label>
+                <input matInput [matDatepicker]="picker" id="expirationDate" formControlName="expirationDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label for="password">{{ 'user-modal.password' | translate }}</mat-label>
+                <input matInput type="password" id="password" formControlName="password">
+                <mat-error *ngIf="userForm.get('password')?.hasError('required')">{{ 'error.password' | translate }}</mat-error>
+                <mat-error *ngIf="userForm.get('password')?.hasError('minlength')">{{ 'error.min-length' | translate: {min: '6'} }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form-field">
+                <mat-label for="repeatPassword">{{ 'user-modal.repeat-password' | translate }}</mat-label>
+                <input matInput type="password" id="repeatPassword" formControlName="repeatPassword">
+                <mat-error *ngIf="userForm.get('repeatPassword')?.hasError('required')">{{ 'error.password' | translate }}</mat-error>
+                <mat-error *ngIf="userForm.get('repeatPassword')?.hasError('minlength')">{{ 'error.min-length' | translate: {min: '6'} }}</mat-error>
+            </mat-form-field>
+        </div>
+        <mat-error *ngIf="userForm.get('repeatPassword')?.touched && userForm.hasError('passwordMismatch')">{{'user-modal.password-mismatch' | translate}}</mat-error>
+        <div class="row">
+            <mat-checkbox class="checkbox-right" formControlName="enabled">{{ 'user-modal.enabled' | translate}}</mat-checkbox>
+        </div>
+
+        <div class="action-buttons">
+            <button mat-button (click)="onCancel()">{{ 'user-modal.cancel-btn' | translate }}</button>
+            <button mat-raised-button color="primary" [disabled]="!checkFieldsOk()" (click)="onSave()">
+                <mat-icon aria-hidden="true">save</mat-icon>
+                {{ 'user-modal.save-btn' | translate }}
+            </button>
+        </div>
+    </form>
+
+</mat-dialog-content>

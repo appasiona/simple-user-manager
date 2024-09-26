@@ -1,0 +1,35 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+$body-font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+$margin-small: 5px;
+
+@mixin font-weight-light {
+    font-weight: lighter;
+}
+
+body {
+    margin: 0;
+    font-family: $body-font-family;
+}
+
+.margin-5 {
+    margin: 0 $margin-small;
+}
+
+button {
+    span {
+        @include font-weight-light;
+    }
+}
+
+.no-box-shadow {
+    box-shadow: none !important;
+}
+
+.mdc-dialog .mdc-dialog__content {
+    padding: 10px 24px !important;
+}
+
+.mat-mdc-paginator-outer-container {
+    padding-bottom: 5px !important;
+}
