@@ -12,6 +12,10 @@ User Manager is an Angular 15 application that allows managing users through an 
 - **Responsive Design**: Mobile support with table scroll for columns that don't fit the screen.
 - **Enhanced Accessibility**: Ensures the application meets basic accessibility guidelines.
 
+## Demo
+
+[Link to live demo](https://appasiona.github.io/simple-user-manager/) 
+
 ## Prerequisites
 
 - Node.js v20.15.1
