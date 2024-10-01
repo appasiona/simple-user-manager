@@ -1,0 +1,52 @@
+{
+    "home-view": {
+        "welcome": "Bienvenido/a",
+        "users-manager-btn": "Gestor de usuarios"
+    },
+    "users-view": {
+        "filter": "Filtrar",
+        "add-user-btn": "Añadir usuario",
+        "col-username": "Usuario",
+        "col-exp-date": "Fecha de caducidad",
+        "col-enabled": "Activo",
+        "col-actions": "Acciones",
+        "users-per-page": "Usuarios por página",
+        "next-page": "Página siguiente",
+        "prev-page": "Página anterior",
+        "first-page": "Primera página",
+        "last-page": "Última página",
+        "user-deleted-success": "¡Usuario eliminado correctamente!",
+        "user-added-success": "¡Usuario añadido correctamente!",
+        "user-updated-success": "¡Usuario actualizado correctamente!"
+    },
+    "user-modal": {
+        "new-user-title": "Nuevo usuario",
+        "edit-user-title": "Editar usuario",
+        "username": "Nombre de usuario",
+        "password": "Contraseña",
+        "repeat-password": "Repetir contraseña",
+        "exp-date": "Fecha de caducidad",
+        "enabled": "Habilitado",
+        "save-btn": "Guardar",
+        "cancel-btn": "Cancelar",
+        "password-mismatch": "¡Las contraseñas no coinciden!"
+    },
+    "delete-user-modal": {
+        "title": "Eliminar usuario",
+        "message": "¿Estás seguro de que deseas eliminar este usuario?",
+        "cancel-btn": "Cancelar",
+        "confirm-btn": "Eliminar"
+    },
+    "generic": {
+        "yes": "Sí",
+        "no": "No",
+        "close": "Cerrar",
+        "cancel": "Cancelar"
+    },
+    "error": {
+        "username-required": "Se requiere un nombre de usuario",
+        "min-length": "La longitud mínima es de {{min}} caracteres",
+        "max-length": "La longitud máxima es de {{max}} caracteres",
+        "password-required": "Se requiere una contraseña"
+    }
+}

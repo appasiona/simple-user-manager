@@ -1,0 +1,52 @@
+{
+    "home-view": {
+        "welcome": "Welcome",
+        "users-manager-btn": "Users manager"
+    },
+    "users-view": {
+        "filter": "Filter",
+        "add-user-btn": "Add user",
+        "col-username": "Username",
+        "col-exp-date": "Expiration date",
+        "col-enabled": "Enabled",
+        "col-actions": "Actions",
+        "users-per-page": "Users per page",
+        "next-page": "Next Page",
+        "prev-page": "Previous page",
+        "first-page": "First page",
+        "last-page": "Last page",
+        "user-deleted-success": "User deleted successfully",
+        "user-added-success": "User added successfully",
+        "user-updated-success": "User updated successfully"
+    },
+    "user-modal": {
+        "new-user-title": "New user",
+        "edit-user-title": "Edit user",
+        "username": "Username",
+        "password": "Password",
+        "repeat-password": "Repeat password",
+        "exp-date": "Expiration date",
+        "enabled": "Enabled",
+        "save-btn": "Save",
+        "cancel-btn": "Cancel",
+        "password-mismatch": "Passwords do not match!"
+    },
+    "delete-user-modal": {
+        "title": "Delete user",
+        "message": "Are you sure you want to delete this user?",
+        "cancel-btn": "Cancel",
+        "confirm-btn": "Delete"
+    },
+    "generic": {
+        "yes": "Yes",
+        "no": "No",
+        "close": "Close",
+        "cancel": "Cancel"
+    },
+    "error": {
+        "username-required": "Username is required",
+        "min-length": "Minimum length is {{min}} characters",
+        "max-length": "Maximum length is {{max}} characters",
+        "password-required": "Password is required"
+    }
+}
